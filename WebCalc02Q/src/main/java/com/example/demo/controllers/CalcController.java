@@ -40,5 +40,17 @@ public class CalcController {
 		return "res";
 
 	}
+	@PostMapping("resMultiply")
+	public String resMultiply(
+			Model model,
+			@RequestParam("numA") String NumA,
+			@RequestParam("numB") String NumB
+	) {
+
+		model.addAttribute("kotae", service.calculateMultiply(NumA, NumB));
+
+		return "res";
+
+	}
 
 }
